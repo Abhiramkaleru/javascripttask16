@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="login">
+      <input type="email" name="email" id="email" placeholder="EMAIL" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="PASSWORD"
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <script>
+           document.getElementById("login").addEventListener("submit", (e) => {
+          e.preventDefault();
+          let email = document.getElementsByName("email")[0].value;
+          let password = document.getElementsByName("password")[0].value;
+          let message = document.getElementById("message");
+          if (email === "abhiramkaleru@gmail.com" && password === "abhiram") {
+            message.textContent = "loginsucessfull";
+            message.className = "sucess";
+            setTimeout(() => {
+              window.location.href =
+                "http://127.0.0.1:5500/.vscode/problemsloving/login.html";
+            });
+          } else if (email !== "abhi" && password === "abhiram") {
+            message.textContent = "invalid email";
+          } else if (email === "abhiramkaleru@gmail.com" && password !== "abhi") {
+            message.textContent = "invalid password";
+          } else {
+            message.textContent = "invalid data";
+          }
+        });
+
+      //   let width_scn = window.screen.width
+      // //   console.log(width_scn);
+      //   if(width_scn<600){
+      //     console.log(" Extra small devices (phones, 600px and down)");
+      //   }
+      //   else if(width_scn>600 && width_scn<768){
+      //     console.log("Small devices (portrait tablets and large phones, 600px and up)");
+      //   }
+      //   else if(width_scn>768 && width_scn<992){
+      //     console.log("Medium devices (landscape tablets, 768px and up)");
+      //   }
+      //   else if(width_scn>992 && width_scn<1200){
+      //     console.log("Large devices (laptops/desktops, 992px and up)");
+      //   }else{
+      //     console.log("Extra large devices (large laptops and desktops, 1200px and up) ");
+      //   }
+    </script>
+  </body>
+</html>
